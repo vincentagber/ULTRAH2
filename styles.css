@@ -1,7 +1,8 @@
 /* Custom Styles for Luxury Feel */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f8f9fa;
+    overflow-x: hidden;
 }
 
 .bg-black {
@@ -21,16 +22,19 @@ body {
 .btn-primary:hover {
     background-color: #a00d24;
     border-color: #a00d24;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4);
 }
 
 .card {
     background-color: #fff;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .form-control {
@@ -44,26 +48,19 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
 }
 
 section {
     padding: 60px 0;
+    overflow-x: hidden;
 }
 
 img {
     border-radius: 10px;
-}
-
-/* Add Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
-
-body {
-    font-family: 'Montserrat', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Parallax Hero */
@@ -84,17 +81,74 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(28, 37, 38, 0.7); /* Black overlay for contrast */
+    background: rgba(28, 37, 38, 0.7);
+    z-index: 1;
 }
 
-/* Micro-interactions */
-.btn-primary:hover {
-    transform: scale(1.05);
-    background-color: #a00d24;
-    box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4);
+header .container {
+    z-index: 2;
+    position: relative;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+/* Responsive Typography */
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.25rem;
+}
+p.lead {
+    font-size: 1.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    header {
+        height: 60vh;
+    }
+    h1 {
+        font-size: 2.25rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    p.lead {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 40px 20px;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p.lead {
+        font-size: 1rem;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
 }
